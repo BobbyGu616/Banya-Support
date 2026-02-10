@@ -17,6 +17,22 @@
             min-height: 100vh;
             padding: 60px 20px;
             box-sizing: border-box;
+            .photo-side {
+    position: relative;
+}
+
+.photo-side::before {
+    content: "";
+    position: absolute;
+    left: -20px; /* 放在人像左边一点 */
+    top: 10%;
+    width: 4px;
+    height: 80%;
+    background: #ff00ff; /* 纯正粉色 */
+    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff; /* 霓虹发光效果 */
+    transform: rotate(-5deg); /* 倾斜一下，更有“划痕”感 */
+    z-index: 1;
+}
         }
 
         /* 顶部标题区域：居中偏上 */
@@ -50,6 +66,7 @@
         }
 
         .photo-side img {
+            position: relative;
             width: 320px;
             height: auto;
             mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
