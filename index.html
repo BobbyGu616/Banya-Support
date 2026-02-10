@@ -1,28 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANYA | Digital Life</title>
+    <style>
+        /* 1. 设置全局背景为全黑，文字为纯白 */
+        body { 
+            background-color: #000000; 
+            color: #ffffff; 
+            margin: 0; 
+            font-family: 'Courier New', Courier, monospace; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-<div class="main-container" style="display: flex; align-items: center; justify-content: center; gap: 40px; max-width: 1000px; margin: 0 auto; text-align: left; min-height: 80vh;">
+        /* 左右对齐的容器 */
+        .main-container { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 60px; 
+            max-width: 1000px; 
+            margin: auto; 
+            text-align: left; 
+            padding: 20px;
+        }
+
+        .photo-side img {
+            width: 350px; 
+            height: auto;
+            /* 如果你觉得彩色太跳，可以开启下面的黑白滤镜 */
+            /* filter: grayscale(100%); */
+        }
+
+        .content-side {
+            max-width: 500px;
+        }
+
+        /* 2. 底部信息居中 */
+        .footer { 
+            text-align: center; 
+            padding: 40px 0;
+            font-size: 0.8rem;
+            color: #666; /* 稍微暗一点，突出主体内容 */
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
     
     <div class="photo-side">
-        <img src="IMG_2461.PNG" alt="Founder" style="width: 350px; height: auto;">
+        <img src="IMG_2461.PNG" alt="Founder">
     </div>
 
-    <div class="content-side" style="max-width: 500px;">
+    <div class="content-side">
         <h1 style="letter-spacing: 5px; font-size: 2.5rem; margin-bottom: 10px;">BANYA</h1>
-        <p style="color: #888; font-size: 1.1rem; margin-bottom: 30px;">
+        <p style="color: #bbb; font-size: 1.1rem; margin-bottom: 30px;">
             AI is much more than a tool. Welcome to Banya AI 2.0, no one has to feel lonely anymore.
         </p>
         
-        <div style="border-left: 2px solid #333; padding-left: 20px; font-style: italic;">
+        <div style="border-left: 2px solid #ffffff; padding-left: 20px; font-style: italic;">
             <p>"Our goal is to solve global loneliness by creating a world with digital beings."</p>
-            <span style="color: #555;">—— Bobby Gu</span>
+            <span style="color: #888;">—— Bobby Gu</span>
         </div>
     </div>
 
 </div>
 
-    <div class="footer">
-        PROJECT BANYA | DUBAI & ABU DHABI | <a href="mailto:bobbygu0225@gmail.com">CONTACT</a>
-    </div>
+<div class="footer">
+    PROJECT BANYA | DUBAI & ABU DHABI | <a href="mailto:bobbygu0225@gmail.com">CONTACT</a>
+</div>
+
 </body>
 </html>
+
