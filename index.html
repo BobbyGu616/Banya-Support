@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BANYA | Digital Life</title>
     <style>
-        /* 1. 设置全局背景为全黑，文字为纯白 */
+        /* 全局背景全黑，文字纯白 */
         body { 
             background-color: #000000; 
             color: #ffffff; 
@@ -13,38 +13,63 @@
             font-family: 'Courier New', Courier, monospace; 
             display: flex;
             flex-direction: column;
+            align-items: center;
             min-height: 100vh;
+            padding: 60px 20px;
+            box-sizing: border-box;
         }
 
-        /* 左右对齐的容器 */
-        .main-container { 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            gap: 60px; 
-            max-width: 1000px; 
-            margin: auto; 
-            text-align: left; 
-            padding: 20px;
+        /* 顶部标题区域：居中偏上 */
+        .header-section {
+            text-align: center;
+            margin-bottom: 80px; /* 标题与下方内容的间距 */
+            max-width: 800px;
+        }
+
+        h1 { 
+            letter-spacing: 10px; 
+            font-size: 3rem; 
+            margin-bottom: 20px; 
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* 中部区域：照片与语录左右分开 */
+        .main-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 100px; /* 照片与语录的间距 */
+            width: 100%;
+            max-width: 1100px;
+            margin-bottom: 100px;
         }
 
         .photo-side img {
-            width: 350px; 
+            width: 320px; /* 稍微缩小一点照片，更精致 */
             height: auto;
-            /* 如果你觉得彩色太跳，可以开启下面的黑白滤镜 */
-            /* filter: grayscale(100%); */
+            /* 移除黑白滤镜，保留原色 */
         }
 
-        .content-side {
-            max-width: 500px;
+        .quote-side {
+            max-width: 450px;
+            border-left: 2px solid #ffffff;
+            padding-left: 30px;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
-        /* 2. 底部信息居中 */
+        /* 底部信息居中 */
         .footer { 
+            margin-top: auto;
             text-align: center; 
-            padding: 40px 0;
             font-size: 0.8rem;
-            color: #ffffff; /* 稍微暗一点，突出主体内容 */
+            padding-bottom: 40px;
         }
 
         .footer a {
@@ -56,30 +81,27 @@
 </head>
 <body>
 
-<div class="main-container">
-    
-    <div class="photo-side">
-        <img src="IMG_2461.PNG" alt="Founder">
-    </div>
-
-    <div class="content-side">
-        <h1 style="letter-spacing: 5px; font-size: 2.5rem; margin-bottom: 10px;">BANYA</h1>
-        <p style="color: #ffffff; font-size: 1.1rem; margin-bottom: 30px;">
+    <div class="header-section">
+        <h1>BANYA</h1>
+        <p class="tagline">
             AI is much more than a tool. Welcome to Banya AI 2.0, no one has to feel lonely anymore.
         </p>
-        
-        <div style="border-left: 2px solid #ffffff; padding-left: 20px; font-style: italic;">
+    </div>
+
+    <div class="main-content">
+        <div class="photo-side">
+            <img src="IMG_2461.PNG" alt="Founder">
+        </div>
+
+        <div class="quote-side">
             <p>"Our goal is to solve global loneliness by creating a world with digital beings."</p>
-            <span style="color: #ffffff;">—— Bobby Gu</span>
+            <span style="font-style: normal; font-weight: bold;">—— Bobby Gu</span>
         </div>
     </div>
 
-</div>
-
-<div class="footer">
-    PROJECT BANYA | DUBAI & ABU DHABI | <a href="mailto:bobbygu0225@gmail.com">CONTACT</a>
-</div>
+    <div class="footer">
+        PROJECT BANYA | DUBAI & ABU DHABI | <a href="mailto:bobbygu0225@gmail.com">CONTACT</a>
+    </div>
 
 </body>
 </html>
-
