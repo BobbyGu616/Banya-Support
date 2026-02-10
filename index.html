@@ -24,14 +24,19 @@
 .photo-side::before {
     content: "";
     position: absolute;
-    left: -20px; /* 放在人像左边一点 */
-    top: 10%;
-    width: 4px;
-    height: 80%;
-    background: #ff00ff; /* 纯正粉色 */
-    box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff; /* 霓虹发光效果 */
-    transform: rotate(-5deg); /* 倾斜一下，更有“划痕”感 */
-    z-index: 1;
+    /* 位置控制 */
+    left: -100px;        /* 向左伸出 100 像素，可以根据需要调整 */
+    top: 30%;            /* 垂直位置 */
+    width: 250px;        /* 方块宽度 */
+    height: 60px;        /* 方块高度 */
+    
+    /* 渐变控制：从右向左变深 (to left) */
+    /* 颜色：透明 -> 半透明粉 -> 浓郁粉 */
+    background: linear-gradient(to left, rgba(255, 0, 255, 0.8) 0%, rgba(255, 0, 255, 0.4) 70%, transparent 100%);
+    
+    z-index: 1;          /* 确保它在背景之上，但在某些布局下可能需要调低 */
+    pointer-events: none; /* 防止遮挡鼠标点击 */
+}
 }
         }
 
