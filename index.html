@@ -1,162 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BANYA | Digital Life</title>
-    <style>
-        /* 全局背景全黑，文字纯白 */
-        body { 
-            background-color: #000000; 
-            color: #ffffff; 
-            margin: 0; 
-            font-family: 'Courier New', Courier, monospace; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 60px 20px;
-            box-sizing: border-box;
-            .photo-side {
-    position: relative;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANYA | Digital Life</title>
+    <style>
+        body { 
+            background-color: #000000; 
+            color: #ffffff; 
+            margin: 0; 
+            font-family: 'Courier New', Courier, monospace; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 60px 20px;
+            box-sizing: border-box;
+        }
 
-.photo-side::before {
-    content: "";
-    position: absolute;
-    /* 位置控制 */
-    left: -100px;        /* 向左伸出 100 像素，可以根据需要调整 */
-    top: 70%;            /* 垂直位置 */
-    width: 300px;        /* 方块宽度 */
-    height: 80px;        /* 方块高度 */
-    
-    /* 渐变控制：从右向左变深 (to left) */
-    /* 颜色：透明 -> 半透明粉 -> 浓郁粉 */
-    background: linear-gradient(to left, rgba(255, 0, 255, 0.8) 0%, rgba(255, 0, 255, 0.4) 70%, transparent 100%);
-    
-    z-index: 0;          /* 确保它在背景之上，但在某些布局下可能需要调低 */
-    pointer-events: none; /* 防止遮挡鼠标点击 */
-}
-}
-        }
+        /* 顶部标题区域：彻底居中 */
+        .header-section {
+            text-align: center;
+            margin-bottom: 80px;
+            max-width: 900px;
+        }
 
-        /* 顶部标题区域：居中偏上 */
-        .header-section {
-            text-align: center;
-            margin-bottom: 80px; /* 标题与下方内容的间距 */
-            max-width: 800px;
-        }
+        h1 { 
+            letter-spacing: 10px; 
+            font-size: 5rem; 
+            margin-bottom: 30px; 
+        }
 
-        .gold-bar-text {
-    position: relative;
-    display: inline-block; /* 确保背景只包裹文字长度 */
-    padding: 5px 15px;     /* 给文字留一点呼吸空间 */
-    z-index: 2;
-}
+        /* 愿景文字：分为两行 */
+        .tagline {
+            font-size: 1.2rem;
+            line-height: 2;
+        }
 
-.gold-bar-text::after {
-    content: "";
-    position: absolute;
-    left: -20px;          /* 稍微往左探出一点 */
-    top: 0;
-    width: 110%;          /* 比文字稍长 */
-    height: 100%;
-    
-    /* 渐变控制：从左向右变深 (to right) */
-    /* 颜色：透明 -> 金色 -> 浓郁金 */
-    background: linear-gradient(to right, transparent 0%, rgba(255, 215, 0, 0.3) 30%, rgba(255, 215, 0, 0.6) 100%);
-    
-    z-index: -1;          /* 关键：放在文字后面 */
-}
+        /* 金色方块：只出现在第二行 */
+        .gold-bar-text {
+            position: relative;
+            display: inline-block;
+            padding: 2px 10px;
+            z-index: 2;
+        }
 
-        h1 { 
-            letter-spacing: 10px; 
-            font-size: 5rem; 
-            margin-bottom: 20px; 
-        }
+        .gold-bar-text::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, transparent 0%, rgba(255, 215, 0, 0.4) 100%);
+            z-index: -1;
+        }
 
-        .tagline {
-            font-size: 1.2rem;
-            color: #ffffff;
-            line-height: 1.6;
-        }
+        /* 中部区域 */
+        .main-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 100px;
+            width: 100%;
+            max-width: 1100px;
+            margin-bottom: 100px;
+        }
 
-        /* 中部区域：照片与语录左右分开 */
-        .main-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 100px; /* 照片与语录的间距 */
-            width: 100%;
-            max-width: 1100px;
-            margin-bottom: 100px;
-        }
+        /* 照片容器：粉色方块作为其伪元素 */
+        .photo-side {
+            position: relative;
+        }
 
-        .photo-side img {
-            position: relative;
-            width: 320px;
-            height: auto;
-            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-           
-        }
+        .photo-side::before {
+            content: "";
+            position: absolute;
+            left: -120px;
+            /* 下移调整：对齐肩部被切掉的位置 */
+            bottom: 20px; 
+            width: 300px;
+            height: 80px;
+            background: linear-gradient(to left, rgba(255, 0, 255, 0.6) 0%, rgba(255, 0, 255, 0.2) 70%, transparent 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
 
-        .quote-side {
-            max-width: 450px;
-            border-left: 2px solid #ffffff;
-            padding-left: 30px;
-            font-style: italic;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
+        .photo-side img {
+            width: 320px;
+            height: auto;
+            mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+        }
 
-        /* 底部信息居中 */
-        .footer { 
-            margin-top: auto;
-            text-align: center; 
-            font-size: 0.8rem;
-            padding-bottom: 40px;
-        }
+        .quote-side {
+            max-width: 450px;
+            border-left: 2px solid #ffffff;
+            padding-left: 30px;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
 
-        .footer a {
-            color: #ffffff;
-            text-decoration: none;
-            border-bottom: 1px solid #ffffff;
-        }
-    </style>
+        .footer { 
+            margin-top: auto;
+            text-align: center; 
+            padding-bottom: 60px;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 1px solid #444;
+            padding-bottom: 2px;
+            margin: 0 20px;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="header-section">
-        <h1>BANYA</h1>
-        <p class="tagline">
-            <p class="gold-bar-text">Welcome to Banya AI 2.0. Our goal is to solve global loneliness by creating a world with digital beings.</p> 
-        </p>
-    </div>
-    
+    <div class="header-section">
+        <h1>BANYA</h1>
+        <div class="tagline">
+            Welcome to Banya AI 2.0.<br>
+            <span class="gold-bar-text">Our goal is to solve global loneliness by creating a world with digital beings.</span>
+        </div>
+    </div>
 
-    <div class="main-content">
-        <div class="photo-side">
-            <img src="IMG_2461.PNG" alt="Founder">
-        </div>
+    <div class="main-content">
+        <div class="photo-side">
+            <img src="IMG_2461.PNG" alt="Founder">
+        </div>
 
-        <div class="quote-side">
-            <p>"AI is much more than a tool. With Banya, no one has to feel lonely anymore. "</p>
-            <span style="font-style: normal; font-weight: bold;">—— Bobby Gu</span>
-        </div>
-    </div>
+        <div class="quote-side">
+            <p>"AI is much more than a tool. With Banya, no one has to feel lonely anymore. "</p>
+            <span style="font-style: normal; font-weight: bold;">—— Bobby Gu</span>
+        </div>
+    </div>
 
-    <div class="footer" style="margin-top: auto; text-align: center; padding-bottom: 60px; width: 100%;">
-    <div style="display: flex; justify-content: center; gap: 40px; font-size: 0.9rem; letter-spacing: 2px;">
-        
-        <a href="https://x.com/Bobby1439712/" target="_blank" style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #444; padding-bottom: 2px;">X</a>
-        
-        <a href="https://www.linkedin.com/in/bobbygu123/" target="_blank" style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #444; padding-bottom: 2px;">LINKEDIN</a>
-        
-        <a href="mailto:bobbygu0225@gmail.com" style="color: #ffffff; text-decoration: none; border-bottom: 1px solid #444; padding-bottom: 2px;">EMAIL</a>
-
-    </div>
-    </div>
+    <div class="footer">
+        <a href="https://x.com/Bobby1439712/" target="_blank">X</a>
+        <a href="https://www.linkedin.com/in/bobbygu123/" target="_blank">LINKEDIN</a>
+        <a href="mailto:bobbygu0225@gmail.com">EMAIL</a>
+    </div>
 
 </body>
 </html>
