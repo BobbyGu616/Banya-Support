@@ -28,7 +28,7 @@
 
         h1 { 
             letter-spacing: 10px; 
-            font-size: 3rem; 
+            font-size: 5rem; 
             margin-bottom: 20px; 
         }
 
@@ -50,9 +50,10 @@
         }
 
         .photo-side img {
-            width: 320px; /* 稍微缩小一点照片，更精致 */
+            width: 320px;
             height: auto;
-            /* 移除黑白滤镜，保留原色 */
+            mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
         }
 
         .quote-side {
