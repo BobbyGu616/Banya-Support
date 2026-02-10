@@ -47,6 +47,28 @@
             max-width: 800px;
         }
 
+        .gold-bar-text {
+    position: relative;
+    display: inline-block; /* 确保背景只包裹文字长度 */
+    padding: 5px 15px;     /* 给文字留一点呼吸空间 */
+    z-index: 2;
+}
+
+.gold-bar-text::after {
+    content: "";
+    position: absolute;
+    left: -20px;          /* 稍微往左探出一点 */
+    top: 0;
+    width: 110%;          /* 比文字稍长 */
+    height: 100%;
+    
+    /* 渐变控制：从左向右变深 (to right) */
+    /* 颜色：透明 -> 金色 -> 浓郁金 */
+    background: linear-gradient(to right, transparent 0%, rgba(255, 215, 0, 0.3) 30%, rgba(255, 215, 0, 0.6) 100%);
+    
+    z-index: -1;          /* 关键：放在文字后面 */
+}
+
         h1 { 
             letter-spacing: 10px; 
             font-size: 5rem; 
@@ -108,9 +130,10 @@
     <div class="header-section">
         <h1>BANYA</h1>
         <p class="tagline">
-            Welcome to Banya AI 2.0. Our goal is to solve global loneliness by creating a world with digital beings. 
+            <p class="gold-bar-text">Welcome to Banya AI 2.0. Our goal is to solve global loneliness by creating a world with digital beings.</p> 
         </p>
     </div>
+    
 
     <div class="main-content">
         <div class="photo-side">
