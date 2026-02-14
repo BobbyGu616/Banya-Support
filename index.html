@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BANYA | Digital Life</title>
+    <title>BANYA | Digital Beings</title>
     <style>
         body { 
             background-color: #1A1A1A; 
@@ -92,6 +92,16 @@
             -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
         }
 
+        .photo-side img {
+            width: 320px;
+            height: auto;
+            /* 原有的遮罩保留 */
+            mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    
+            /* 添加滤镜：饱和度降到 20%，对比度稍微提高一点 */
+            filter: saturate(20%) contrast(1.1);
+         }
         .quote-side {
             max-width: 450px;
             border-left: 2px solid #ffffff;
