@@ -1,5 +1,4 @@
-# Banya-Support
-# Banya App Support
+# Banya-Website
 
 Welcome to Banya – the way to Eluna and Free City
 
