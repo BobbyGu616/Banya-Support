@@ -1,64 +1,148 @@
-/* 引入 Inter 字体，让标题更有力量 */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BANYA | Digital Beings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            background-color: #ffffff; 
+            color: #1A1A1A; 
+            margin: 0; 
+            /* 全局采用现代、厚重的无衬线字体 */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 80px 20px;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
 
-body { 
-    background-color: #ffffff; 
-    color: #1A1A1A; 
-    margin: 0; 
-    /* 默认字体 */
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding: 60px 20px;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased; /* 让字体更清晰 */
-}
+        /* 顶部标题区域 */
+        .header-section {
+            text-align: center;
+            margin-bottom: 100px;
+            max-width: 1000px;
+        }
 
-h1 { 
-    font-family: 'Inter', sans-serif;
-    font-weight: 900; /* 极致加粗 */
-    letter-spacing: 5px; /* 稍微收紧，更有冲击力 */
-    font-size: 6rem; /* 放大 */
-    margin-bottom: 20px; 
-}
+        h1 { 
+            font-weight: 900; 
+            letter-spacing: -2px; /* 紧凑的间距更有大厂感 */
+            font-size: 7rem; 
+            margin: 0 0 20px 0;
+            line-height: 1;
+        }
 
-.tagline {
-    font-size: 1.6rem; /* 放大文字 */
-    font-weight: 600;
-    line-height: 1.8;
-}
+        .tagline {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.5;
+            color: #333;
+        }
 
-/* 加深金色的权重 */
-.gold-bar-text::after {
-    background: linear-gradient(to right, #FFD700 0%, #FF8C00 100%); /* 使用渐变深金 */
-    height: 60%; /* 让金条稍微厚一点 */
-    top: 30%;
-    opacity: 0.7; /* 增加不透明度 */
-}
+        /* 加强版金条：更浓郁，更显眼 */
+        .gold-bar-text {
+            position: relative;
+            display: inline-block;
+            padding: 0 12px;
+            z-index: 1;
+        }
 
-/* 增强粉色方块的存在感 */
-.photo-side::before {
-    background: linear-gradient(to right, #FF00FF 0%, #8A2BE2 100%); /* 电光紫渐变 */
-    width: 200px; /* 加宽 */
-    height: 150px;
-    opacity: 0.8;
-}
+        .gold-bar-text::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 8px; /* 压在文字下半部分 */
+            width: 100%;
+            height: 22px;
+            background: linear-gradient(90deg, #FFD700 0%, #FFA500 100%);
+            z-index: -1;
+            opacity: 0.8;
+        }
 
-.quote-side {
-    font-family: 'Courier New', monospace; /* 保留极客感 */
-    font-weight: bold;
-    font-size: 1.3rem;
-    max-width: 480px;
-}
+        /* 中部主内容 */
+        .main-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 80px;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 120px;
+        }
 
-.footer a {
-    font-family: 'Courier New', monospace;
-    font-weight: 900;
-    color: #1A1A1A;
-    border-bottom: 3px solid #1A1A1A; /* 链接线加粗 */
-}
+        /* 照片与电光紫方块 */
+        .photo-side {
+            position: relative;
+        }
+
+        .photo-side::before {
+            content: "";
+            position: absolute;
+            left: -120px;
+            bottom: 20px;
+            width: 220px;
+            height: 160px;
+            /* 更有侵略性的电光紫渐变 */
+            background: linear-gradient(135deg, #FF00FF 0%, #7000FF 100%);
+            z-index: -1;
+            filter: blur(2px); /* 稍微一点点模糊增加质感 */
+        }
+
+        .photo-side img {
+            width: 380px; /* 稍微放大照片 */
+            height: auto;
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            filter: contrast(1.05) saturate(1.1);
+        }
+
+        /* 语录：使用 Courier New 形成极客感对比 */
+        .quote-side {
+            max-width: 500px;
+            font-family: 'Courier New', Courier, monospace;
+            border-left: 6px solid #1A1A1A; /* 粗边框增加重量 */
+            padding-left: 40px;
+            font-size: 1.4rem;
+            line-height: 1.8;
+            font-weight: bold;
+        }
+
+        /* 底部链接：变粗变大 */
+        .footer { 
+            margin-top: auto;
+            text-align: center; 
+            padding-bottom: 60px;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #1A1A1A;
+            text-decoration: none;
+            border-bottom: 4px solid #1A1A1A; /* 极粗的底线 */
+            padding-bottom: 4px;
+            margin: 0 30px;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+            font-weight: 900;
+            transition: all 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: #FF00FF;
+            border-bottom-color: #FF00FF;
+        }
+
+        /* 适配手机端 */
+        @media (max-width: 768px) {
+            h1 { font-size: 4rem; }
+            .main-content { flex-direction: column; gap: 50px; }
+            .photo-side img { width: 300px; }
+            .footer a { margin: 10px; display: inline-block; }
+        }
     </style>
 </head>
 <body>
@@ -66,19 +150,19 @@ h1 {
     <div class="header-section">
         <h1>BANYA</h1>
         <div class="tagline">
-            <br>
-            <span class="gold-bar-text">Our goal is to solve loneliness by creating digital beings.</span>
+            Our goal is to solve loneliness by <br>
+            <span class="gold-bar-text">creating a world with digital beings.</span>
         </div>
     </div>
 
     <div class="main-content">
         <div class="photo-side">
-            <img src="Subject.png" alt="Founder">
+            <img src="Subject.png" alt="Founder Bobby Gu">
         </div>
 
         <div class="quote-side">
-            <p>"AI is much more than a tool. With Banya, no one has to feel lonely anymore. "</p>
-            <span style="font-style: normal; font-weight: bold;">—— Bobby Gu</span>
+            <p>"AI is much more than a tool. With Banya, no one has to feel lonely anymore."</p>
+            <span style="font-style: normal; font-weight: 900; font-family: 'Inter', sans-serif; letter-spacing: 1px;">—— BOBBY GU</span>
         </div>
     </div>
 
